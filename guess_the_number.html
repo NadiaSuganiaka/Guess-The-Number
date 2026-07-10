@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess The Number</title>
+</head>
+<body>
+    <h1>Guess The Number</h1>
+    <p>You need to guess a number between 
+        <h3>1 and 100</h3>
+        After each attempt, a hint (higher or lower) will be displayed until you guess correctly.
+    </p>
+    <input type="number" class="no-arrows">
+    <button>SEND</button>
+
+    <!---->
+    <div>
+        <p>Attempts: </p>
+        <p>5</p>
+    </div>
+    
+    <div>
+        <p>20</p>
+        <svg class="arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9 9" width="512" height="512" shape-rendering="crispEdges">
+            <rect x="1" y="4" width="8" height="1" fill="black" />
+
+            <rect x="5" y="1" width="1" height="1" fill="black" />
+            <rect x="6" y="2" width="1" height="1" fill="black" />
+            <rect x="7" y="3" width="1" height="1" fill="black" />
+
+            <rect x="7" y="5" width="1" height="1" fill="black" />
+            <rect x="6" y="6" width="1" height="1" fill="black" />
+            <rect x="5" y="7" width="1" height="1" fill="black" />
+        </svg>
+    </div>
+
+    <!-- Задній фон (Оверлей) -->
+<div id="modalOverlay" class="overlay">
+    <!-- Контентне вікно -->
+    <div class="modal">
+        <svg width="146" height="550" viewBox="0 0 146 550" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M67.107 65L77.4522 85.76L68.3241 91.8983L53 74.4865L67.107 65Z" fill="#BBB289"/>
+            <path d="M79.8696 0L90.2148 20.76L81.0868 26.8983L65.7626 9.48649L79.8696 0Z" fill="#BB89B4"/>
+            <path d="M6.39206 113L26.5763 124.428L22.4402 134.621L-5.81145e-06 128.753L6.39206 113Z" fill="#BB8E89"/>
+            <path d="M64.1242 144L82.1303 158.621L76.359 167.986L55.2049 158.472L64.1242 144Z" fill="#89B9BB"/>
+            <path d="M135.042 14L143.105 35.7482L133.372 40.874L120 21.9217L135.042 14Z" fill="#89B9BB"/>
+            <path d="M15.2688 188.484L38.441 189.509L39.3805 200.468L16.7207 205.422L15.2688 188.484Z" fill="#BBB289"/>
+            <path d="M48.3651 277.002L70.972 271.813L74.7989 282.125L54.2794 292.94L48.3651 277.002Z" fill="#BB89B4"/>
+            <path d="M24 307.924L47.171 308.976L48.0976 319.937L25.432 324.864L24 307.924Z" fill="#89B9BB"/>
+            <path d="M63.4621 376.221L86.5311 378.634L86.8117 389.63L63.8957 393.216L63.4621 376.221Z" fill="#BBB289"/>
+            <path d="M27.8342 419.899L50.4405 414.707L54.2687 425.019L33.7506 435.836L27.8342 419.899Z" fill="#BB8E89"/>
+            <path d="M92.1377 464.559L111.842 452.322L118.805 460.838L102.899 477.719L92.1377 464.559Z" fill="#89B9BB"/>
+            <path d="M63 533.067L86.0959 530.926L88.519 541.656L66.7449 549.649L63 533.067Z" fill="#BBB289"/>
+        </svg>
+        <div>
+            <h2>Congratulations!</h2>
+            <p>You guessed it!
+                The number guessed was: 
+            </p>
+            <h1>24</h1>
+            <div>
+                <p>Attempts: </p>
+                <p>5</p>
+            </div>
+            <button>RESTART</button>
+        </div>
+        <svg width="140" height="554" viewBox="0 0 140 554" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M68.8346 69L58.4894 89.76L67.6174 95.8983L82.9416 78.4865L68.8346 69Z" fill="#89B9BB"/>
+            <path d="M73.8346 0L63.4894 20.76L72.6174 26.8983L87.9416 9.48649L73.8346 0Z" fill="#BBB289"/>
+            <path d="M129.312 109L109.128 120.428L113.264 130.621L135.704 124.753L129.312 109Z" fill="#BB89B4"/>
+            <path d="M71.5801 140L53.574 154.621L59.3453 163.986L80.4994 154.472L71.5801 140Z" fill="#BBB289"/>
+            <path d="M10.7176 29L2.65441 50.7482L12.3872 55.874L25.7591 36.9217L10.7176 29Z" fill="#BB8E89"/>
+            <path d="M139.928 200.964L116.756 201.989L115.816 212.949L138.476 217.902L139.928 200.964Z" fill="#89B9BB"/>
+            <path d="M109.478 273.496L86.8706 268.306L83.0437 278.619L103.563 289.434L109.478 273.496Z" fill="#BB8E89"/>
+            <path d="M133.843 304.418L110.672 305.47L109.745 316.431L132.41 321.357L133.843 304.418Z" fill="#BBB289"/>
+            <path d="M74.8882 356.235L51.8192 358.647L51.5386 369.643L74.4546 373.229L74.8882 356.235Z" fill="#89B9BB"/>
+            <path d="M113.479 423.004L90.8722 417.812L87.044 428.125L107.562 438.942L113.479 423.004Z" fill="#BB89B4"/>
+            <path d="M50.5665 468.559L30.8618 456.322L23.899 464.838L39.8057 481.719L50.5665 468.559Z" fill="#BBB289"/>
+            <path d="M100.18 537.067L77.0839 534.926L74.6608 545.656L96.4349 553.649L100.18 537.067Z" fill="#BB8E89"/>
+        </svg>
+
+    </div>
+</div>
+</body>
+</html>
