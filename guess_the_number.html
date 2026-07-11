@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guess The Number</title>
+    <link rel="stylesheet" href="guess_the_number.css">
 </head>
 <body>
     <h1>Guess The Number</h1>
@@ -14,13 +15,14 @@
     <input type="number" class="no-arrows">
     <button>SEND</button>
 
-    <!---->
-    <div>
-        <p>Attempts: </p>
-        <p>5</p>
-    </div>
     
-    <div>
+    <div id="attempts">
+        <!--<p>Attempts: </p>
+        <p>5</p>-->
+    </div>
+
+    
+    <div><!--спроби
         <p>20</p>
         <svg class="arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9 9" width="512" height="512" shape-rendering="crispEdges">
             <rect x="1" y="4" width="8" height="1" fill="black" />
@@ -33,12 +35,9 @@
             <rect x="6" y="6" width="1" height="1" fill="black" />
             <rect x="5" y="7" width="1" height="1" fill="black" />
         </svg>
-    </div>
-
-    <!-- Задній фон (Оверлей) -->
-<div id="modalOverlay" class="overlay">
-    <!-- Контентне вікно -->
-    <div class="modal">
+    --></div>
+    
+    <dialog>
         <svg width="146" height="550" viewBox="0 0 146 550" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M67.107 65L77.4522 85.76L68.3241 91.8983L53 74.4865L67.107 65Z" fill="#BBB289"/>
             <path d="M79.8696 0L90.2148 20.76L81.0868 26.8983L65.7626 9.48649L79.8696 0Z" fill="#BB89B4"/>
@@ -58,12 +57,12 @@
             <p>You guessed it!
                 The number guessed was: 
             </p>
-            <h1>24</h1>
+            <div id="chosenNumberBox"></div>
             <div>
                 <p>Attempts: </p>
                 <p>5</p>
             </div>
-            <button>RESTART</button>
+            <button class="button" id="restart">RESTART</button>
         </div>
         <svg width="140" height="554" viewBox="0 0 140 554" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M68.8346 69L58.4894 89.76L67.6174 95.8983L82.9416 78.4865L68.8346 69Z" fill="#89B9BB"/>
@@ -79,8 +78,8 @@
             <path d="M50.5665 468.559L30.8618 456.322L23.899 464.838L39.8057 481.719L50.5665 468.559Z" fill="#BBB289"/>
             <path d="M100.18 537.067L77.0839 534.926L74.6608 545.656L96.4349 553.649L100.18 537.067Z" fill="#BB8E89"/>
         </svg>
+    </dialog>
 
-    </div>
-</div>
+<script src="guess_the_number.js"></script>
 </body>
 </html>
