@@ -12,30 +12,33 @@
         <h3>1 and 100</h3>
         After each attempt, a hint (higher or lower) will be displayed until you guess correctly.
     </p>
-    <input type="number" class="no-arrows">
-    <button>SEND</button>
+    <input type="number" class="no-arrows" id="inputNumber">
+    <button id="sendButton">SEND</button>
 
     
-    <div id="attempts">
-        <!--<p>Attempts: </p>
-        <p>5</p>-->
+    <div id="attemptsBoxAll">
+        <div>
+            <span>Attempts: </span>
+            <div id="attemptsBox"></div>
+        </div>
+        <div id="attemptsArr">
+            <!--спроби
+            <p>20</p>
+            <svg class="arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9 9" width="512" height="512" shape-rendering="crispEdges">
+                <rect x="1" y="4" width="8" height="1" fill="black" />
+
+                <rect x="5" y="1" width="1" height="1" fill="black" />
+                <rect x="6" y="2" width="1" height="1" fill="black" />
+                <rect x="7" y="3" width="1" height="1" fill="black" />
+
+                <rect x="7" y="5" width="1" height="1" fill="black" />
+                <rect x="6" y="6" width="1" height="1" fill="black" />
+                <rect x="5" y="7" width="1" height="1" fill="black" />
+            </svg>
+        -->
+        </div>
     </div>
 
-    
-    <div><!--спроби
-        <p>20</p>
-        <svg class="arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9 9" width="512" height="512" shape-rendering="crispEdges">
-            <rect x="1" y="4" width="8" height="1" fill="black" />
-
-            <rect x="5" y="1" width="1" height="1" fill="black" />
-            <rect x="6" y="2" width="1" height="1" fill="black" />
-            <rect x="7" y="3" width="1" height="1" fill="black" />
-
-            <rect x="7" y="5" width="1" height="1" fill="black" />
-            <rect x="6" y="6" width="1" height="1" fill="black" />
-            <rect x="5" y="7" width="1" height="1" fill="black" />
-        </svg>
-    --></div>
     
     <dialog>
         <svg width="146" height="550" viewBox="0 0 146 550" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -58,9 +61,9 @@
                 The number guessed was: 
             </p>
             <div id="chosenNumberBox"></div>
-            <div>
-                <p>Attempts: </p>
-                <p>5</p>
+            <div id="attemptsBoxPopup">
+                <span>Attempts: </span>
+                <div id="attemptsPopup"></div>
             </div>
             <button class="button" id="restart">RESTART</button>
         </div>
