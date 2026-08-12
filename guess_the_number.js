@@ -5,6 +5,7 @@ const sendButton = document.querySelector('#sendButton')//надсилання �
 const attemptsBox = document.querySelector('#attemptsBox')//великий дів зі спробами
 const attemptsArr = document.querySelector('#attemptsArr')//перелік спроб!
 const attemptsPopup = document.querySelector('#attemptsPopup')//великий дів зі спробами popup
+const audio = document.querySelector('#myAudio');
 const modal = document.querySelector('#modal')
 
 function getRandomNumber(min, max) {
@@ -45,20 +46,24 @@ sendButton.addEventListener('click', async () => {
     if (userGuess === chosenNumber) {
         const modal = document.querySelector('dialog');
         modal.showModal()
+        audio.currentTime = 0; // Перемотування на початок (за бажанням)
+        audio.play().catch(error => {
+            console.log("Playback error:", error);
+        });
     } else if (userGuess > chosenNumber) {
         const attemptsArrMoreHTML = `
             <div class="attemptsArrElement">
                 <p>${userGuess}</p>
-                <svg class="arrow" style="transform: rotate(90deg);" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9 9" width="30" height="30" shape-rendering="crispEdges">
-                    <rect x="1" y="4" width="8" height="1" fill="black" />
+                <svg class="arrow" fill: "#527C52" style="transform: rotate(90deg);" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9 9" width="30" height="30" shape-rendering="crispEdges">
+                    <rect x="1" y="4" width="8" height="1"/>
 
-                    <rect x="5" y="1" width="1" height="1" fill="black" />
-                    <rect x="6" y="2" width="1" height="1" fill="black" />
-                    <rect x="7" y="3" width="1" height="1" fill="black" />
+                    <rect x="5" y="1" width="1" height="1" />
+                    <rect x="6" y="2" width="1" height="1" />
+                    <rect x="7" y="3" width="1" height="1" />
 
-                    <rect x="7" y="5" width="1" height="1" fill="black" />
-                    <rect x="6" y="6" width="1" height="1" fill="black" />
-                    <rect x="5" y="7" width="1" height="1" fill="black" />
+                    <rect x="7" y="5" width="1" height="1" />
+                    <rect x="6" y="6" width="1" height="1" />
+                    <rect x="5" y="7" width="1" height="1" />
                 </svg>
             </div>
         `;
@@ -67,16 +72,16 @@ sendButton.addEventListener('click', async () => {
         const attemptsArrMoreHTML = `
             <div class="attemptsArrElement">
                 <p>${userGuess}</p>
-                <svg class="arrow" style="transform: rotate(270deg);" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9 9" width="30" height="30" shape-rendering="crispEdges">
-                    <rect x="1" y="4" width="8" height="1" fill="black" />
+                <svg class="arrow" fill: "#527C52" style="transform: rotate(270deg);" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9 9" width="30" height="30" shape-rendering="crispEdges">
+                    <rect x="1" y="4" width="8" height="1" />
 
-                    <rect x="5" y="1" width="1" height="1" fill="black" />
-                    <rect x="6" y="2" width="1" height="1" fill="black" />
-                    <rect x="7" y="3" width="1" height="1" fill="black" />
+                    <rect x="5" y="1" width="1" height="1" />
+                    <rect x="6" y="2" width="1" height="1" />
+                    <rect x="7" y="3" width="1" height="1" />
 
-                    <rect x="7" y="5" width="1" height="1" fill="black" />
-                    <rect x="6" y="6" width="1" height="1" fill="black" />
-                    <rect x="5" y="7" width="1" height="1" fill="black" />
+                    <rect x="7" y="5" width="1" height="1" />
+                    <rect x="6" y="6" width="1" height="1" />
+                    <rect x="5" y="7" width="1" height="1" />
                 </svg>
             </div>
         `;

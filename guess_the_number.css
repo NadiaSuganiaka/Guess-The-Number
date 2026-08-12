@@ -1,6 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=DotGothic16&display=swap');
+
 .no-arrows::-webkit-outer-spin-button,
 .no-arrows::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
 
+*{
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body{
+    background-color: #060606;
+    
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    flex-direction: column;
+    padding: 72px 0 0 0;
+    cursor: default;
+}
+
+button{
+    cursor: pointer;
+}
+
+h1{
+    font-family: "DotGothic16", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 64px;
+    color: #62E665;
+    text-align: center;
+}
+
+p{
+    font-family: "DotGothic16", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 24px;
+    color: #61DC63;
+    text-align: center;
+}
+
+h3{
+    font-family: "DotGothic16", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 40px;
+    color: #62E665;
+    text-align: center;
+}
+
+#rules {
+    max-width: 609px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 2px;
+    margin-top: 28px;
+}
+
+#inputNumber{
+    margin: 40px 0;
+    width: 80px;
+    height: 58px;
+    background-color: #CBCBCB;
+    box-shadow: 0 0 8px 4px #61DC63;
+    border-radius: 8px;
+    font-family: "DotGothic16", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 32px;
+    padding: 8px;
+}
+
+#sendButton{
+    font-family: "DotGothic16", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 36px;
+    color: #060606;
+    text-align: center;
+    background-color: #48AB4A;
+    padding: 0 101px;
+    border-radius: 64px;
+    box-shadow: inset 0 0 12px 8px rgba(6, 6, 6, 0.5);
+}
+
+#attemptsBoxAll{
+    margin: 24px 0;
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    flex-direction: column;
+    font-family: "DotGothic16", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 36px;
+    color: #48AB4A;
+}
+
+#attemptsLine{
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    font-family: "DotGothic16", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 36px;
+    color: #76A042;
+}
+
+#attemptsBox{
+    font-family: "DotGothic16", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 36px;
+    color: #76A042;
+    text-align: end;
+    min-width: 54px;
+}
+
+span{
+    font-family: "DotGothic16", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.attemptsArrElement{
+    display: flex;
+    align-items: baseline;
+    flex-direction: row;
+    gap: 4px;
+}
+
+.attemptsArrElement p{
+    font-family: "DotGothic16", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 36px;
+    color: #527C52;
+}
+
+#attemptsArr{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.arrow{
+    fill: #527C52;
+}
+
+dialog {
+    margin: auto; /* Це критично важливо для центрування */
+    position: absolute; /* Або приберіть це, щоб використовувати значення за замовчуванням */
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 24px;
+}
+
+#modalBox{
+    background-color: #060606;
+    box-shadow: inset 0 0 60px 0 #48AB4A;
+    display: flex;
+    flex-direction: row;
+    padding: 48px 8px;
+    border-radius: 24px;
+    height: 768px;
+}
+
+#modalInfo{
+    margin: 49px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+h2{
+    font-family: "DotGothic16", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 48px;
+    color: #48AB4A;
+    text-align: center;
+}
+
+#modalInfo p{
+    font-family: "DotGothic16", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 32px;
+    color: #48AB4A;
+    text-align: center;
+    max-width: 368px;
+}
+
+.chosenNumber{
+    font-family: "DotGothic16", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 96px;
+    color: #61DC63;
+    text-align: center;
+}
+
+#attemptsBoxPopup{
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    font-family: "DotGothic16", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 24px;
+    color: #76A042;
+}
+
+#attemptsBoxPopup span{
+
+}
+
+#attemptsPopup{
+    font-family: "DotGothic16", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 24px;
+    color: #76A042;
+    text-align: end;
+    min-width: 38px;
+}
+
+#restart{
+    font-family: "DotGothic16", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 36px;
+    color: #060606;
+    text-align: center;
+    background-color: #48AB4A;
+    padding: 0 101px;
+    border-radius: 64px;
+    box-shadow: inset 0 0 12px 8px rgba(6, 6, 6, 0.5);
+}
