@@ -5,7 +5,7 @@ const sendButton = document.querySelector('#sendButton')//надсилання �
 const attemptsBox = document.querySelector('#attemptsBox')//великий дів зі спробами
 const attemptsArr = document.querySelector('#attemptsArr')//перелік спроб
 const attemptsPopup = document.querySelector('#attemptsPopup')//великий дів зі спробами popup
-
+const modal = document.querySelector('#modal')
 
 function getRandomNumber(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -22,9 +22,14 @@ const chosenNumberBoxHTML = `
     <h1 class="chosenNumber">${chosenNumber}</h1>
 `;
 
-const attemptsAllHTML = `
-    <span>${attempt}</span>
-`;
+// Функція для оновлення значення спроб на екрані
+function updateAttempts() {
+    attemptsBox.textContent = attempt;
+    attemptsPopup.textContent = attempt;
+}
+
+// Початкове відображення (0)
+updateAttempts();
 
 sendButton.addEventListener('click', async () => {
     if (!inputNumber.value.trim()) {
@@ -32,13 +37,21 @@ sendButton.addEventListener('click', async () => {
         return;
     }
 
-    if (inputNumber = chosenNumber) {
-        //вивести popup
-    } else{
-        attempt++
-        //chosenNumberBox.insertAdjacentHTML('afterbegin', chosenNumberBoxHTML);
+    const userGuess = Number(inputNumber.value);
+    attempt++;
+    updateAttempts();
+    
+    if (userGuess === chosenNumber) {
+        const modal = document.querySelector('dialog');
+        modal.showModal()
+    } else if (userGuess > chosenNumber) {
+        alert("Загадане число менше");
+        
+    } else {
+        alert("Загадане число більше");
     }
-});
+    inputNumber.value = "";
+});//chosenNumberBox.insertAdjacentHTML('afterbegin', chosenNumberBoxHTML);
 
 
 chosenNumberBox.insertAdjacentHTML('afterbegin', chosenNumberBoxHTML);
